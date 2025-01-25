@@ -1,1 +1,1 @@
-# comments-toxicity-analyzer
+# Comments Toxicity Analyzer
