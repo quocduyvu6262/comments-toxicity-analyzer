@@ -1,8 +1,5 @@
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-
 import { Metadata } from "next";
 import DefaultLayout from "@/components/Layouts/DefaultLaout";
-import SettingBoxes from "@/components/SettingBoxes";
 
 export const metadata: Metadata = {
   title: "Next.js Settings Page | NextAdmin - Next.js Dashboard c",
@@ -12,11 +9,7 @@ export const metadata: Metadata = {
 const Settings = () => {
   return (
     <DefaultLayout headerTitle={""}>
-      <div className="mx-auto w-full max-w-[1080px]">
-        <Breadcrumb pageName="Settings" />
-
-        <SettingBoxes />
-      </div>
+      <div className="mx-auto w-full max-w-[1080px]"></div>
     </DefaultLayout>
   );
 };
