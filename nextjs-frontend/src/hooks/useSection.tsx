@@ -1,8 +1,5 @@
 import React, { createContext, useCallback, useContext } from "react";
 import useLocalStorage from "@/hooks/useLocalStorage";
-import { Metric } from "@/types/metric";
-import { Simulate } from "react-dom/test-utils";
-import error = Simulate.error;
 
 type SectionData = {
   [key: string]: any;
@@ -27,7 +24,7 @@ export const SectionProvider = ({
 }) => {
   const [sectionsData, setSectionsData] = useLocalStorage<SectionData>(
     "sections-data",
-    [],
+    {},
   );
 
   const fetchSectionData = async (
@@ -88,8 +85,12 @@ export const SectionProvider = ({
 
 export const useSection = () => {
   const context = useContext(SectionContext);
-  if (!context) {
-    throw new Error("useSectionData must be used within a SectionProvider");
-  }
-  return context;
+  return (
+    context ?? {
+      sectionsData: {},
+      setSectionsData: () => {},
+      fetchSectionData: async () => {},
+      clearSectionData: () => {},
+    }
+  );
 };
