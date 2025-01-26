@@ -22,11 +22,16 @@ The YouTube Comment Toxicity Analyzer is a web application that provides insight
 
 Example: A **toxicity score of 0.8** indicates a highly toxic comment, while a **profanity score of 0.2** suggests minimal offensive language.
 
-### Key Technologies Used
+## Key Technologies Used
 
 - **Next.js**: A framework for building responsive user interfaces.  
 - **FastAPI**: A high-performance web framework for creating APIs.  
 - **Google Perspective**: A machine learning model to classify and score comments across six toxicity attributes.
+
+## Future Improvements
+
+- **Expand to More Platforms**: Extend support to other social media platforms, especially **Meta Threads** and **Reddit**, for broader analysis across various audiences.  
+- **Increase Attribute Coverage**: Integrate additional attributes to provide deeper and more comprehensive insights.
 
 ## Screenshots
 
