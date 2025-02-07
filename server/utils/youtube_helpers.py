@@ -6,6 +6,8 @@ import os
 MAX_COMMENTS = 500
 
 PERSPECTIVE_API_KEY = os.getenv("PERSPECTIVE_API_KEY")
+PERSPECTIVE_API_KEY_2 = os.getenv("PERSPECTIVE_API_KEY_2")
+
 api_service_name = "youtube"
 api_version = "v3"
 youtube = googleapiclient.discovery.build(api_service_name, api_version, developerKey=PERSPECTIVE_API_KEY)

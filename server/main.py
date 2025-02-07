@@ -23,8 +23,7 @@ app.add_middleware(
 @app.get("/api/youtube/comments/{postId}")
 async def getYoutubeComments(postId: str):
     comments = get_youtube_comments_helper(postId, None, [])
-    metric_maps = analyze_youtube_comments_helper(comments)
-    return metric_maps
+    return comments
 
 
 @app.post("/api/youtube/comments/analyze-sentiment")
