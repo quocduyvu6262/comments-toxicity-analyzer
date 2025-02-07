@@ -7,6 +7,8 @@ import { useSection } from "@/hooks/useSection";
 import Histogram from "@/components/Charts/Histogram";
 import Radar from "@/components/Charts/Radar";
 import YoutubeInput from "@/components/Forms/YoutubeInput";
+import Loader from "@/components/common/Loader";
+import Spinner from "@/components/common/Spinner";
 
 const SectionPage = () => {
   const router = useRouter();
@@ -33,7 +35,7 @@ const SectionPage = () => {
       return response.json();
     };
 
-    fetchSectionData(id.toString(), fetchFn);
+    await fetchSectionData(id.toString(), fetchFn);
   };
 
   return (
@@ -57,10 +59,16 @@ const SectionPage = () => {
       )}
 
       {isLoading && (
-        <div className="flex h-[140px] w-full flex-col items-center justify-center rounded-[10px] bg-white p-6 shadow-1 dark:bg-gray-dark">
-          <p className="block font-satoshi text-lg font-medium text-gray-700 dark:text-white">
-            Analyzing ...
-          </p>
+        <div className="flex h-[140px] w-full flex-col items-center justify-center gap-5 rounded-[10px] bg-white p-6 shadow-1 dark:bg-gray-dark">
+          <div className="flex flex-row items-center justify-items-center gap-5 font-satoshi text-lg font-medium text-gray-700 dark:text-white">
+            <p>Analyzing</p>
+            <Spinner />
+          </div>
+          <div>
+            <p>
+              The process may take anywhere from a few seconds to few minutes.
+            </p>
+          </div>
         </div>
       )}
     </DefaultLayout>
