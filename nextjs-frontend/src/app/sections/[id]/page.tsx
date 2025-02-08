@@ -66,7 +66,8 @@ const SectionPage = () => {
           </div>
           <div>
             <p>
-              The process may take anywhere from a few seconds to few minutes.
+              The process may take anywhere from a few seconds to a few minutes
+              due to usage limits imposed by the Google Perspective API.
             </p>
           </div>
         </div>
